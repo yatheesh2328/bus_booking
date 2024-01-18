@@ -16,7 +16,9 @@ pipeline {
       }
     }
     stage('deploy') {
+      steps {
       sh 'scp /home/slave3/workspace/demoMBP1_develop/target/bus-booking-app-1.0-SNAPSHOT.jar root@172.31.17.229:/opt/apache-tomcat-8.5.98/webapps/'
     }
   }
+}
 }
