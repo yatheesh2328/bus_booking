@@ -18,6 +18,7 @@ pipeline {
     stage('Run JAR Locally') {
       steps { 
         sh 'java -jar /home/slave3/workspace/demoMBP1_develop/target/bus-booking-app-1.0-SNAPSHOT.jar'
+        sh 'sleep 30'
       }
     }
     stage('deploy') {
