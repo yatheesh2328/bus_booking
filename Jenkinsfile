@@ -3,7 +3,7 @@ pipeline {
     label 'slave3'
   }
   stages {
-    stage('checkout") {
+    stage('checkout') {
       steps {
         sh 'git clone https://github.com/yatheesh2328/bus_booking.git'
       }
