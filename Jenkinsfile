@@ -4,7 +4,7 @@ pipeline {
         stage('checkout') {
             steps {
                 sh 'rm -rf bus_booking'
-                sh 'git clone https://github.com/tarundanda147/bus_booking.git'
+                sh 'git clone https://github.com/yatheesh2328/bus_booking.git'
             }
         }
 
@@ -20,10 +20,10 @@ pipeline {
                // Remember this is the step which I followed for free style project.
                 script {
                     rtServer(
-                        id: "Artifact",
-                        url: "http://13.238.154.172:8081/artifactory",
-                        username: "jenkins",
-                        password: "passwd"
+                        id: "artifact",
+                        url: "http://13.40.110.196:8081/artifactory",
+                        username: "admin",
+                        password: "Aeiou@2823"
                     )
                 }
             }
