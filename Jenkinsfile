@@ -13,7 +13,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    build 'install'
+                    build()
                 }
             }
         }
