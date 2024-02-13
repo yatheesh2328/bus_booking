@@ -1,7 +1,7 @@
 @Library('library-demo') _
 
 pipeline {
-    agent { label 'java' }
+    agent any
     stages {
         stage('checkout') {
             steps {
@@ -13,8 +13,17 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    build()
+                    sh 'mvn clean install'
                 }
+            }
+        }
+        stage('Sonarqube Scan') {
+            steps {
+            withSonarQubeEnv('sonar'){
+                script {
+                    sonar()
+                }
+            }
             }
         }
     }
