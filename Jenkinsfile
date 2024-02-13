@@ -1,5 +1,3 @@
-@Library('library-demo') _
-
 pipeline {
     agent any
     stages {
@@ -13,6 +11,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
+                    sh 'mvn --version'
                     sh 'mvn clean install'
                 }
             }
